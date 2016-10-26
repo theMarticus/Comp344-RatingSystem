@@ -1,0 +1,53 @@
+/*Custom CSS file*/
+
+/*Form CSS goes here*/
+.title {
+    font-size: 2em;
+    text-decoration: none;
+}
+.text-input-underline{
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-bottom: solid 2px #c9c9c9;
+    transition: border 0.3s;
+}
+.text-input-underline:focus {
+    outline: none;
+    border-bottom: solid 2px #969696;
+}
+
+.labelText {
+    font-size: 1.4em;
+}
+
+.subHeader{
+    text-decoration: underline !important;
+
+}
+/*Form CSS Ends here*/
+
+a {
+  text-decoration: underline;
+}
+
+.fa-star, .fa-star-half-o {
+  color: #FFD700;
+}
+
+.recommendation {
+  text-align: center;
+}
+
+.price {
+  color: red;
+}
+
+#json-input {
+  display: none;
+}
+
+
+.errorMessage{
+    color:red;
+}
