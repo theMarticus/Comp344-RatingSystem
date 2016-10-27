@@ -198,7 +198,7 @@ function get_all_categories($dbo){
     $stmt = null;
 }
 
-function displayproduct($dbo) {
+function displayProduct($dbo) {
     $prod_id = $_GET['prod_id'];
     $prod_id = 7;
     $shopper_group = 1;
@@ -229,7 +229,29 @@ function displayproduct($dbo) {
     $stmt = null;
 }
 
-function displayproductattributes($dbo) {
+function displayProductRecommendations($dbo) {
+    echo '<h3>Other Recommended Products</h3>';
+    $prod_id = $_GET['prod_id'];
+    $prod_id = 7;
+    $shopper_group = 1;
+    /*$stmt = $dbo->prepare("SQL");
+    //I had to use a group by because duplicates were being returned
+    $stmt->bindParam(':id', $prod_id);
+    $stmt->bindParam(':shgroup', $shopper_group);
+    try_or_die($stmt);
+    */
+
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+        <div class = "col-md-4 recommendation">
+        <h3><?php echo $row['Prod_name']?></h3>
+        </div>
+        <?php
+    }
+    $stmt = null;
+}
+
+function displayProductAttributes($dbo) {
+    echo '<h3>Other Recommended Products</h3>';
     $prod_id = $_GET['prod_id'];
     //$prod_id = 7;
     $stmt = $dbo->prepare("SELECT ID, PRODUCT_PROD_ID, NAME FROM ATTRIBUTE WHERE PRODUCT_PROD_ID = (:id)");
