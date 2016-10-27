@@ -236,7 +236,6 @@ function displayProductReviews($dbo) { ?>
     $prod_id = 7;
     $shopper_group = 1;
     /*$stmt = $dbo->prepare("SQL");
-    //I had to use a group by because duplicates were being returned
     $stmt->bindParam(':id', $prod_id);
     $stmt->bindParam(':shgroup', $shopper_group);
     try_or_die($stmt);
@@ -252,13 +251,12 @@ function displayProductReviews($dbo) { ?>
 }
 
 function displayProductRecommendations($dbo) { ?>
-    <h3>Other Recommended Products</h3>'
+    <h3>Other Recommended Products</h3>
     <?php
     $prod_id = $_GET['prod_id'];
     $prod_id = 7;
     $shopper_group = 1;
     /*$stmt = $dbo->prepare("SQL");
-    //I had to use a group by because duplicates were being returned
     $stmt->bindParam(':id', $prod_id);
     $stmt->bindParam(':shgroup', $shopper_group);
     try_or_die($stmt);
@@ -266,7 +264,16 @@ function displayProductRecommendations($dbo) { ?>
 
     /*while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { */?>
         <div class = "col-md-4 recommendation">
-        <h3><?php echo $row['Prod_name']?></h3>
+        <h3>Product Name - Price</h3>
+        <div id="hearts-existing" class="starrr" data-rating='3'></div>
+        </div>
+        <div class = "col-md-4 recommendation">
+        <h3>Product Name - Price</h3>
+        <div id="hearts-existing" class="starrr" data-rating='4'></div>
+        </div>
+        <div class = "col-md-4 recommendation">
+        <h3>Product Name - Price</h3>
+        <div id="hearts-existing" class="starrr" data-rating='5'></div>
         </div>
         <?php
     //}

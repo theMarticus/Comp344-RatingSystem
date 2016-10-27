@@ -51,3 +51,8 @@ a {
 .errorMessage{
     color:red;
 }
+
+
+/* star rating */
+#hearts { color: #ee8b2d;}
+#hearts-existing { color: #ee8b2d;}

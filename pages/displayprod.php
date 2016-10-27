@@ -4,6 +4,7 @@ include '../layouts/header.php';
 //Allows function calls and connection database
 include '../controller/controller.php';
 ?>
+<script src="/js/stars.js" type="text/javascript"></script>
 
 <div class = "container">
       <?php displayProduct($dbo);?>
