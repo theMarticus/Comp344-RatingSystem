@@ -19,6 +19,9 @@ include '../controller/controller.php';
       <br/>
     </div>
   </div>
+   <div class = "row">
+    <?php displayProductReviews($dbo); ?>
+  </div>
   <div class = "row">
     <?php displayProductRecommendations($dbo); ?>
   </div>

@@ -229,8 +229,9 @@ function displayProduct($dbo) {
     $stmt = null;
 }
 
-function displayProductRecommendations($dbo) {
-    echo '<h3>Other Recommended Products</h3>';
+function displayProductReviews($dbo) { ?>
+    <h3>Reviews</h3>
+    <?php
     $prod_id = $_GET['prod_id'];
     $prod_id = 7;
     $shopper_group = 1;
@@ -241,12 +242,34 @@ function displayProductRecommendations($dbo) {
     try_or_die($stmt);
     */
 
-    while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+    /*while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { */?>
         <div class = "col-md-4 recommendation">
         <h3><?php echo $row['Prod_name']?></h3>
         </div>
         <?php
-    }
+    //}
+    $stmt = null;
+}
+
+function displayProductRecommendations($dbo) { ?>
+    <h3>Other Recommended Products</h3>'
+    <?php
+    $prod_id = $_GET['prod_id'];
+    $prod_id = 7;
+    $shopper_group = 1;
+    /*$stmt = $dbo->prepare("SQL");
+    //I had to use a group by because duplicates were being returned
+    $stmt->bindParam(':id', $prod_id);
+    $stmt->bindParam(':shgroup', $shopper_group);
+    try_or_die($stmt);
+    */
+
+    /*while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { */?>
+        <div class = "col-md-4 recommendation">
+        <h3><?php echo $row['Prod_name']?></h3>
+        </div>
+        <?php
+    //}
     $stmt = null;
 }
 
